@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Books Directory</title>
+    <title>Authors Directory</title>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f4f4f9; padding: 20px; }
         h1 { color: #333; }
@@ -13,6 +13,8 @@
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: #f2f2f2; color: #333; }
         tr:nth-child(even) { background-color: #fafafa; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 10px; }
     </style>
 </head>
 <body>
@@ -20,28 +22,26 @@
         <a href="/authors" class="btn">Authors</a>
         <a href="/books" class="btn">Books</a>
     </div>
-    <h1>Books Directory</h1>
-    <a href="/books/new" class="btn">Add New Book</a>
-    
+    <h1>Authors Directory</h1>
+    <a href="/authors/new" class="btn">Add New Author</a>
+
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Title</th>
-                <th>Publication Year</th>
-                <th>Author</th>
+                <th>Name</th>
+                <th>Bio</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="book" items="${books}">
+            <c:forEach var="author" items="${authors}">
                 <tr>
-                    <td>${book.id}</td>
-                    <td>${book.title}</td>
-                    <td>${book.publicationYear}</td>
-                    <td>${book.author.name}</td>
+                    <td>${author.id}</td>
+                    <td>${author.name}</td>
+                    <td>${author.bio}</td>
                     <td>
-                        <a href="/books/${book.id}/edit" class="btn btn-edit" style="margin-bottom: 0;">Edit</a>
+                        <a href="/authors/${author.id}/edit" class="btn btn-edit" style="margin-bottom: 0;">Edit</a>
                     </td>
                 </tr>
             </c:forEach>

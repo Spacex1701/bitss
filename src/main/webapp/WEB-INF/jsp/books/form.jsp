@@ -17,6 +17,10 @@
     </style>
 </head>
 <body>
+    <div class="nav">
+        <a href="/authors">Authors</a> |
+        <a href="/books">Books</a>
+    </div>
     <div class="form-container">
         <h1>${book.id == null ? 'Add New' : 'Edit'} Book</h1>
         <form:form action="${book.id == null ? '/books' : '/books/' += book.id}" method="post" modelAttribute="book">

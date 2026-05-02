@@ -19,6 +19,11 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
+    public Author findById(Long id) {
+        return authorRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid author Id:" + id));
+    }
+
     @Transactional
     public Author save(Author author) {
         return authorRepository.save(author);
